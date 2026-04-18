@@ -1,0 +1,202 @@
+You are a senior full-stack engineer and real-time systems architect.
+
+updates a complete Online Exam Proctoring System with LIVE CAMERA streaming and Admin Monitoring Dashboard.
+
+---
+
+PROJECT GOAL:
+
+When a student starts the exam:
+
+* Turn ON webcam
+* Show live camera on student dashboard
+* Stream camera feed to admin dashboard
+* Detect suspicious activity
+* Send alerts in real-time
+
+---
+
+TECH STACK:
+
+Frontend:
+
+* React.js (with hooks)
+* Tailwind CSS
+
+Backend:
+
+* Node.js (Express)
+* WebSocket (Socket.io)
+
+Database:
+
+* MongoDB (store violations + metadata)
+
+---
+
+FEATURES REQUIRED:
+
+---
+
+1. STUDENT SIDE (EXAM DASHBOARD)
+
+When "Start Exam" is clicked:
+
+* Ask for camera permission
+* Start webcam using getUserMedia
+* Show live camera preview on screen
+
+UI:
+
+* Small camera box (top-right corner)
+* Timer
+* Warning counter
+
+Code requirement:
+
+* Use navigator.mediaDevices.getUserMedia()
+* Display video stream in <video> tag
+
+---
+
+2. LIVE STREAM TO ADMIN
+
+* Send webcam stream to backend using WebRTC or Socket.io
+* Each student has unique ID (roll number)
+
+---
+
+3. ADMIN DASHBOARD (LIVE MONITORING)
+
+Admin can:
+
+* See all students in grid view
+
+* Each student shows:
+
+  * Name
+  * Roll number
+  * Live camera feed
+  * Status (Active / Suspicious / Disqualified)
+
+* Highlight:
+
+  * Red border → cheating detected
+  * Green → normal
+
+---
+
+4. CHEATING DETECTION
+
+Detect:
+
+* Tab switch
+* Fullscreen exit
+* Multiple faces (optional AI)
+* Camera turned OFF
+
+On detection:
+
+* Show warning on student screen
+* Send event to admin dashboard
+
+---
+
+5. REAL-TIME EVENTS (SOCKET.IO)
+
+Events:
+
+* student-joined
+* video-stream
+* violation-detected
+* student-left
+
+---
+
+6. BACKEND API
+
+Endpoints:
+
+POST /start-exam
+POST /report-violation
+GET /students-live
+
+---
+
+7. DATABASE STRUCTURE
+
+Student:
+
+{
+name,
+roll,
+status,
+violations,
+isCameraOn,
+lastActiveTime
+}
+
+---
+
+8. UI REQUIREMENTS
+
+Student Dashboard:
+
+* Video box (fixed corner)
+* Warning popup
+* Clean exam layout
+
+Admin Dashboard:
+
+* Grid layout (cards)
+* Live video feeds
+* Real-time updates
+* Filter/search students
+
+---
+
+9. SECURITY RULES
+
+* If camera is OFF → auto warning
+* If violations > 5 → disqualify
+* Log all events in database
+
+---
+
+10. BONUS FEATURES
+
+* Screenshot capture every 30 sec
+* Face detection (optional AI)
+* Audio monitoring (optional)
+
+---
+
+OUTPUT REQUIRED:
+
+1. React code for:
+
+   * Student webcam
+   * Admin dashboard grid
+
+2. Node.js backend:
+
+   * Socket.io server
+   * API routes
+
+3. WebRTC or streaming logic
+
+4. MongoDB schema
+
+5. End-to-end working flow
+
+---
+
+GOAL:
+
+Build a real-time proctoring system like:
+
+* HackerRank
+* CodeChef Contest Monitor
+* Online proctored exams
+
+---
