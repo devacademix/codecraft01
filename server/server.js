@@ -14,12 +14,14 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://codecraft01-delta.vercel.app"],
     methods: ["GET", "POST"]
   }
 });
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "https://codecraft01-delta.vercel.app"]
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
