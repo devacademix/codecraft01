@@ -9,8 +9,8 @@ import {
 import axios from 'axios';
 import { io } from 'socket.io-client';
 
-const API_URL = 'http://localhost:5000/api';
-const SOCKET_URL = 'http://localhost:5000';
+const API_URL = 'https://codecraft01-delta.vercel.app/api';
+const SOCKET_URL = 'https://codecraft01-delta.vercel.app';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');

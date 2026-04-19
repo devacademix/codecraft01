@@ -63,7 +63,7 @@ export const useProctoring = (examSession) => {
 
   const sendViolationToBackend = async (violation) => {
     try {
-      await axios.post('http://localhost:5000/api/violations', {
+      await axios.post('https://codecraft01-delta.vercel.app/api/violations', {
         studentName: examSession.studentName,
         rollNumber: examSession.rollNumber,
         type: violation.type,
@@ -226,7 +226,7 @@ const Exam = () => {
     setExamSession(session);
     
     try {
-      await axios.post('http://localhost:5000/api/exam/start', {
+      await axios.post('https://codecraft01-delta.vercel.app/api/exam/start', {
         studentName: session.studentName,
         rollNumber: session.rollNumber,
         startTime: session.startTime

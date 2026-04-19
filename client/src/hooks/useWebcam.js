@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = 'http://localhost:5000';
+const SOCKET_URL = 'https://codecraft01-delta.vercel.app';
 
 export const useWebcam = (examSession) => {
   const [isStreaming, setIsStreaming] = useState(false);
